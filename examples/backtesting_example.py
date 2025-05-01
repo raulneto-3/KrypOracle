@@ -23,7 +23,8 @@ from kryporacle.backtesting.strategies import (
 from kryporacle.backtesting.advanced_strategies import (
     TrendFollowingStrategy,
     DualMACDStrategy,
-    VolatilityBreakoutStrategy
+    VolatilityBreakoutStrategy,
+    DivergenceStrategy  # Adicionar importação aqui
 )
 from kryporacle.backtesting.metrics import calculate_metrics
 from kryporacle.backtesting.visualizer import plot_backtest_results
@@ -166,6 +167,24 @@ def main():
             end_time=end_time
         )
         results['Volatility Breakout'] = breakout_results
+        
+        # Strategy 8: Divergence Strategy
+        print("\nRunning Divergence Strategy...")
+        divergence_strategy = DivergenceStrategy(
+            indicator='rsi',           # Indicador para detectar divergências
+            lookback_period=14,        # Período do RSI
+            divergence_window=5,       # Janela para detectar extremos locais
+            signal_threshold=0.0       # Sem filtro de força do sinal
+        )
+        divergence_results = engine.run(
+            strategy=divergence_strategy,
+            exchange_id=exchange_id,
+            symbol=symbol,
+            timeframe=timeframe,
+            start_time=start_time,
+            end_time=end_time
+        )
+        results['RSI Divergence'] = divergence_results
         
         # Visualize each backtest
         for strategy_name, result_df in results.items():
