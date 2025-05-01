@@ -1,0 +1,98 @@
+# Arquivos de ambiente Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ambientes virtuais
+venv/
+ENV/
+env/
+.venv/
+.env
+
+# Arquivos de configuração
+*.env
+!.env.example
+
+# Arquivos de dados
+data/storage/
+data/backtests/
+*.csv
+*.json
+*.db
+
+# Arquivos de log
+*.log
+logs/
+
+# Arquivos de saída de gráficos e imagens
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+!data/assets/*.png
+!data/assets/*.jpg
+
+# Artefatos de testes e cobertura
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+
+# Arquivos de IDE e editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+
+# Arquivos temporários
+tmp/
+temp/
+.temp/
+*.tmp
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# Arquivos específicos de documentação
+/site
+/docs/_build/
+
+# Arquivo de cache mypy
+.mypy_cache/
+
+# Arquivos de cache pytype
+.pytype/
+
+# Cache do pyre type checker
+.pyre/
+
+# Arquivos de saída do poetry
+poetry.lock
