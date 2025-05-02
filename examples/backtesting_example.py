@@ -29,6 +29,7 @@ from kryporacle.backtesting.advanced_strategies import (
 from kryporacle.backtesting.metrics import calculate_metrics
 from kryporacle.backtesting.visualizer import plot_backtest_results
 from kryporacle.backtesting.utils import get_backtest_dir, get_backtest_path
+from kryporacle.visualization.json_generator import generate_strategy_backtest_json, generate_strategy_comparison_json
 
 def main():
     """Example script demonstrating the advanced backtesting functionality."""
@@ -188,19 +189,41 @@ def main():
         
         # Visualize each backtest
         for strategy_name, result_df in results.items():
+            strategy_name = strategy_name.replace("/", "_")
             if not result_df.empty:
                 print(f"\nResults for {strategy_name}:")
                 metrics = calculate_metrics(result_df, timeframe=timeframe)
                 print_metrics(metrics)
                 
-                # Create and save plot
-                plot_backtest_results(
-                    result_df, 
-                    strategy_name,
+                # Generate JSON for individual strategy
+                generate_strategy_backtest_json(
+                    result_df,
+                    strategy_name=strategy_name,
+                    symbol=symbol,
                     timeframe=timeframe,
-                    filename=f"backtest_{strategy_name.replace(' ', '_').lower()}.png"
+                    start_time=start_time,
+                    end_time=end_time,
+                    parameters={},  # You should extract actual parameters from strategy
+                    metrics=metrics,
+                    filename=get_backtest_path(f"backtest_{strategy_name.replace(' ', '_').lower()}.json")
                 )
                 
+        # Generate strategy comparison JSON
+        metrics_dict = {}
+        for strategy_name, result_df in results.items():
+            if not result_df.empty:
+                metrics_dict[strategy_name] = calculate_metrics(result_df, timeframe=timeframe)
+                
+        generate_strategy_comparison_json(
+            results=results,
+            metrics=metrics_dict,
+            symbol=symbol,
+            timeframe=timeframe,
+            start_time=start_time,
+            end_time=end_time,
+            filename=get_backtest_path("strategy_comparison.json")
+        )
+        
         # Compare all strategies
         compare_strategies(results, timeframe)
 
