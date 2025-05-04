@@ -27,7 +27,6 @@ from kryporacle.backtesting.advanced_strategies import (
     DivergenceStrategy  # Adicionar importação aqui
 )
 from kryporacle.backtesting.metrics import calculate_metrics
-from kryporacle.backtesting.visualizer import plot_backtest_results
 from kryporacle.backtesting.utils import get_backtest_dir, get_backtest_path
 from kryporacle.visualization.json_generator import generate_strategy_backtest_json, generate_strategy_comparison_json
 

@@ -143,7 +143,6 @@ dashboard.save_figure(fig, "dashboard.png")
 from kryporacle.backtesting.engine import BacktestEngine
 from kryporacle.backtesting.strategies import MovingAverageCrossover
 from kryporacle.backtesting.metrics import calculate_metrics
-from kryporacle.backtesting.visualizer import plot_backtest_results
 
 # Inicializar backtesting
 engine = BacktestEngine(initial_capital=10000.0, commission=0.001)
@@ -165,10 +164,6 @@ results = engine.run(
 metrics = calculate_metrics(results)
 print(f"Retorno Total: {metrics['total_return']:.2%}")
 print(f"Sharpe Ratio: {metrics['sharpe_ratio']:.2f}")
-
-# Visualizar resultados
-fig = plot_backtest_results(results, strategy.name)
-fig.savefig("backtest_results.png")
 ```
 
 ## Estrutura do Projeto

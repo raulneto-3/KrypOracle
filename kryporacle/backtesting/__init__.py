@@ -12,7 +12,6 @@ from .advanced_strategies import (
     VolatilityBreakoutStrategy
 )
 from .metrics import calculate_metrics
-from .visualizer import plot_backtest_results
 from .utils import get_backtest_dir, get_backtest_path, sanitize_filename
 
 __all__ = [
@@ -26,7 +25,6 @@ __all__ = [
     'DualMACDStrategy',
     'VolatilityBreakoutStrategy',
     'calculate_metrics',
-    'plot_backtest_results',
     'get_backtest_dir',
     'get_backtest_path',
     'sanitize_filename'
