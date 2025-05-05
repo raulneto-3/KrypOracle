@@ -11,7 +11,8 @@ from .macd_based import MACDStrategy, DualMACDStrategy
 from .trend_following import TrendFollowingStrategy
 from .volatility_based import VolatilityBreakoutStrategy
 from .divergence_based import DivergenceStrategy
-from .candlestick_strategy import CandlestickPatternStrategy, CandlestickFilterStrategy  # Adicione CandlestickPatternStrategy aqui
+from .candlestick_strategy import CandlestickPatternStrategy, CandlestickFilterStrategy  
+from .fibonacci import FibonacciRetracementStrategy
 
 # Expose all strategies at package level
 __all__ = [
@@ -26,6 +27,7 @@ __all__ = [
     'TrendFollowingStrategy',
     'VolatilityBreakoutStrategy',
     'DivergenceStrategy',
-    'CandlestickPatternStrategy',  # Adicione esta linha
+    'CandlestickPatternStrategy',  
     'CandlestickFilterStrategy',
+    'FibonacciRetracementStrategy'
 ]
