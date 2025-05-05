@@ -13,6 +13,7 @@ from .volatility_based import VolatilityBreakoutStrategy
 from .divergence_based import DivergenceStrategy
 from .candlestick_strategy import CandlestickPatternStrategy, CandlestickFilterStrategy  
 from .fibonacci import FibonacciRetracementStrategy
+from .ichimoku import IchimokuStrategy
 
 # Expose all strategies at package level
 __all__ = [
@@ -29,5 +30,6 @@ __all__ = [
     'DivergenceStrategy',
     'CandlestickPatternStrategy',  
     'CandlestickFilterStrategy',
-    'FibonacciRetracementStrategy'
+    'FibonacciRetracementStrategy',
+    'IchimokuStrategy',
 ]
