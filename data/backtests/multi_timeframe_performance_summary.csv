@@ -1,0 +1,8 @@
+Estratégia,Retorno Total,Retorno Anual,Índice Sharpe,Drawdown Máximo,Operações,Taxa de Acerto
+MA Crossover (20/50),1.83%,3.85%,0.23,-8.29%,13,2207.69%
+Multi-Timeframe com MA,1.83%,3.85%,0.23,-8.29%,13,2207.69%
+Multi-Timeframe Agressivo,-4.49%,-9.14%,-0.44,-17.14%,72,461.11%
+Multi-Timeframe com RSI,-6.13%,-12.36%,-0.65,-11.78%,10,1770.00%
+Multi-Timeframe Básico,-6.69%,-13.45%,-0.70,-19.92%,67,471.64%
+RSI (14),-7.05%,-14.14%,-0.74,-11.78%,10,1670.00%
+Multi-Timeframe Conservador,-7.63%,-15.26%,-0.78,-20.51%,69,466.67%

@@ -14,6 +14,7 @@ from .divergence_based import DivergenceStrategy
 from .candlestick_strategy import CandlestickPatternStrategy, CandlestickFilterStrategy  
 from .fibonacci import FibonacciRetracementStrategy
 from .ichimoku import IchimokuStrategy
+from .multi_timeframe import MultiTimeframeStrategy
 
 # Expose all strategies at package level
 __all__ = [
@@ -32,4 +33,5 @@ __all__ = [
     'CandlestickFilterStrategy',
     'FibonacciRetracementStrategy',
     'IchimokuStrategy',
+    'MultiTimeframeStrategy',
 ]

@@ -72,7 +72,7 @@ class ChartBase:
         """
         # Ensure filename has an extension
         if not filename.endswith(('.png', '.jpg', '.jpeg', '.pdf', '.svg')):
-            filename = f"{filename}.png"
+            filename = f"{filename.replace('/', '_')}.png"
             
         if directory:
             # Create directory if it doesn't exist

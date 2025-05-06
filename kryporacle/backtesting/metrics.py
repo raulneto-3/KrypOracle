@@ -91,6 +91,14 @@ def calculate_metrics(df: pd.DataFrame, risk_free_rate: float = 0.0, timeframe: 
         total_trades = 0
         win_rate = 0
     
+    # Add profit factor calculation
+    if 'trade_profit' in df.columns:
+        wins = df[df['trade_profit'] > 0]['trade_profit'].sum()
+        losses = abs(df[df['trade_profit'] < 0]['trade_profit'].sum())
+        profit_factor = wins / losses if losses != 0 else float('inf')
+    else:
+        profit_factor = 0.0
+    
     # Return metrics
     return {
         'initial_value': initial_value,
@@ -101,7 +109,8 @@ def calculate_metrics(df: pd.DataFrame, risk_free_rate: float = 0.0, timeframe: 
         'sharpe_ratio': sharpe_ratio,
         'max_drawdown': max_drawdown,
         'total_trades': total_trades,
-        'win_rate': win_rate
+        'win_rate': win_rate,
+        'profit_factor': profit_factor  # Add this line
     }
 
 def get_periods_per_year(timeframe: str) -> int:
