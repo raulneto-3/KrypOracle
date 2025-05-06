@@ -41,7 +41,6 @@ data/storage/
 logs/
 
 # Arquivos de saída de gráficos e imagens
-*.png
 *.jpg
 *.jpeg
 *.gif
