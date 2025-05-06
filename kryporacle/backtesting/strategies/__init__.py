@@ -15,6 +15,7 @@ from .candlestick_strategy import CandlestickPatternStrategy, CandlestickFilterS
 from .fibonacci import FibonacciRetracementStrategy
 from .ichimoku import IchimokuStrategy
 from .multi_timeframe import MultiTimeframeStrategy
+from .volume_profile import VolumeProfileStrategy
 
 # Expose all strategies at package level
 __all__ = [
@@ -34,4 +35,6 @@ __all__ = [
     'FibonacciRetracementStrategy',
     'IchimokuStrategy',
     'MultiTimeframeStrategy',
+    'VolumeProfileStrategy',
+
 ]
